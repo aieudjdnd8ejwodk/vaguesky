@@ -1,0 +1,9 @@
+{
+ "schemaVersion": 1,
+ "updatedAt": "2026-11-03T00:00:00+09:00",
+ "tournament": {"id": "vaguesky-2v2-2027", "name": "Vague Sky 2v2【2027】", "startsAt": "2027-01-09T09:30:00+09:00", "status": "entry"},
+ "teams": [],
+ "rounds": [],
+ "matches": [],
+ "awards": {"bestClip": [], "prediction": {"winnerTeamId": null, "hitCount": null}}
+}
