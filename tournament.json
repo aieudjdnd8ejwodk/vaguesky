@@ -1,9 +1,87 @@
 {
  "schemaVersion": 1,
- "updatedAt": "2026-11-03T00:00:00+09:00",
- "tournament": {"id": "vaguesky-2v2-2027", "name": "Vague Sky 2v2【2027】", "startsAt": "2027-01-09T09:30:00+09:00", "status": "entry"},
- "teams": [],
+ "updatedAt": "2026-11-03T03:18:05+09:00",
+ "tournament": {
+  "id": "vaguesky-2v2-2027",
+  "name": "Vague Sky 2v2【2027】",
+  "startsAt": "2027-01-09T09:30:00+09:00",
+  "status": "entry"
+ },
+ "teams": [
+  {
+   "id": "t1566289569601818680",
+   "name": "Mist",
+   "seed": null,
+   "status": "active"
+  },
+  {
+   "id": "t1566311738805198959",
+   "name": "マニフェストロッドデブファンズ",
+   "seed": null,
+   "status": "active"
+  },
+  {
+   "id": "t1566330381823901696",
+   "name": "Duality",
+   "seed": null,
+   "status": "active"
+  },
+  {
+   "id": "t1566380215431725056",
+   "name": "BlowJP",
+   "seed": null,
+   "status": "active"
+  },
+  {
+   "id": "t1566386695564435567",
+   "name": "コントラタップチーム",
+   "seed": null,
+   "status": "active"
+  },
+  {
+   "id": "t1566399083898208256",
+   "name": "はげいぬ",
+   "seed": null,
+   "status": "active"
+  },
+  {
+   "id": "t1566467922489114644",
+   "name": "Best butterfly clickers",
+   "seed": null,
+   "status": "active"
+  },
+  {
+   "id": "t1566614961868767262",
+   "name": "最高の朝食",
+   "seed": null,
+   "status": "active"
+  },
+  {
+   "id": "t1566720774440747052",
+   "name": "iOSブラザーズ（スラム街を添えて）",
+   "seed": null,
+   "status": "active"
+  },
+  {
+   "id": "t1566734495594455040",
+   "name": "妙だな",
+   "seed": null,
+   "status": "active"
+  },
+  {
+   "id": "t1566757356182835250",
+   "name": "ダブル別ゲー浮気ニキ",
+   "seed": null,
+   "status": "active"
+  }
+ ],
  "rounds": [],
  "matches": [],
- "awards": {"bestClip": [], "prediction": {"winnerTeamId": null, "hitCount": null}}
+ "awards": {
+  "bestClip": [],
+  "prediction": {
+   "winnerTeamId": null,
+   "hitCount": null
+  }
+ }
 }
