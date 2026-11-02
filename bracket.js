@@ -7,7 +7,7 @@
 (function () {
   "use strict";
 
-  var DATA_URL = "data/tournament.json"; // GitHub Pages 版：同じサイト内の JSON を読む
+  var DATA_URL = "tournament.json"; // GitHub Pages 版：同じ場所の JSON を読む
   var POLL_MS = 30000;
 
   var root = document.getElementById("bracket-root");

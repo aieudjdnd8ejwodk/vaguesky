@@ -1,0 +1,183 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Vague Sky</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+/* トップ: シリーズ全体の入口。大きな「Vague Sky」→ いまの大会 → 動画 → 大会の記録 → 主催 */
+.home-hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
+.home-hero .hero-bg { position: absolute; inset: 0; background: url("hero-home.png") center 35% / cover no-repeat; }
+.home-hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 70% at 50% 45%, rgba(6, 19, 23, 0.55), rgba(6, 19, 23, 0.92)), linear-gradient(180deg, transparent 55%, var(--bg)); }
+.home-hero .wrap { position: relative; z-index: 1; padding-block: 96px 80px; display: grid; justify-items: center; text-align: center; gap: 18px; }
+.home-hero h1 { font-family: var(--display); font-weight: 800; font-size: clamp(64px, 15vw, 168px); line-height: 0.9; letter-spacing: -0.04em; text-shadow: 0 0 80px rgba(94, 214, 234, 0.45); }
+.home-hero h1 span { display: block; color: var(--accent); }
+.home-hero .lead { color: var(--fg); font-weight: 700; font-size: clamp(16px, 2.4vw, 19px); max-width: 34em; }
+.home-hero .lead small { display: block; color: var(--muted); font-weight: 500; font-size: 14px; margin-top: 4px; }
+
+/* いまの大会 */
+.feature { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); border-radius: 22px; overflow: hidden; border: 1.5px solid var(--accent); background: var(--panel); box-shadow: 0 0 60px rgba(94, 214, 234, 0.12); }
+.feature-img { min-height: 260px; background: url("poster-announce.png") center / cover no-repeat; }
+.feature-body { padding: 26px 28px; display: grid; gap: 14px; align-content: start; min-width: 0; }
+.feature-body h3 { font-family: var(--display); font-weight: 800; font-size: 34px; line-height: 1.05; }
+.feature-body h3 span { color: var(--accent); }
+.facts { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; font-size: 15px; }
+.facts dt { color: var(--muted); font-weight: 700; }
+.facts dd { margin: 0; font-weight: 900; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; }
+.links a { font-weight: 900; font-size: 14px; text-decoration: none; padding: 8px 14px; border-radius: 10px; border: 1.5px solid var(--line); color: var(--fg); }
+.links a.go { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.links a:hover { border-color: var(--accent); }
+
+/* 動画 */
+.vcards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 16px; }
+.vcard { display: grid; gap: 10px; text-decoration: none; color: var(--fg); }
+.vcard img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 14px; border: 1px solid var(--line); display: block; }
+.vcard:hover img { border-color: var(--accent); }
+.vcard b { font-weight: 900; font-size: 16px; }
+.vcard small { display: block; color: var(--muted); font-size: 13px; }
+
+/* 大会の記録 */
+.archive { width: 100%; border-collapse: collapse; font-size: 15px; }
+.archive-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 16px; background: var(--panel); }
+.archive th, .archive td { text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.archive th { color: var(--muted); font-size: 12px; letter-spacing: 0.15em; font-family: var(--display); }
+.archive tr:last-child td { border-bottom: 0; }
+.archive td b { font-weight: 900; }
+.badge { display: inline-block; font-size: 12px; font-weight: 900; padding: 2px 10px; border-radius: 999px; background: var(--ok); color: var(--on-accent); }
+
+@media (max-width: 760px) {
+  .feature { grid-template-columns: 1fr; }
+  .feature-img { min-height: 190px; }
+  .home-hero .wrap { padding-block: 64px 52px; }
+}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="icon.png" alt="" width="34" height="34"><b>Vague Sky</b></a>
+    <nav class="nav" aria-label="ページ内">
+      <a href="#now">開催中の大会</a>
+      <a href="#videos">動画</a>
+      <a href="#archive">大会の記録</a>
+      <a href="#about">主催</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="home-hero">
+    <div class="hero-bg" role="img" aria-label="崖際から見下ろす2人と、崖にしがみつくプレイヤー"></div>
+    <div class="wrap">
+      <p class="eyebrow">HIVE SkyWars Tournament Series</p>
+      <h1>Vague<span>Sky</span></h1>
+      <p class="lead">霧の空で戦う、HIVE SkyWars の大会シリーズ。<small>主催 M!ST | TeamSKY</small></p>
+      <div class="cta">
+        <a class="btn primary" href="2027.html">Vague Sky 2v2【2027】へ</a>
+        <a class="btn" href="https://discord.gg/rru5EZYvR3" target="_blank" rel="noopener">Discord に参加</a>
+        <a class="btn" href="https://www.youtube.com/@vaguesky-mist" target="_blank" rel="noopener">YouTube チャンネル</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="now">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Now</p>
+        <h2>開催中の大会</h2>
+      </div>
+      <article class="feature">
+        <div class="feature-img" role="img" aria-label="Vague Sky 2v2 2027 のキービジュアル"></div>
+        <div class="feature-body">
+          <span class="pill open" id="status"><i></i><span id="status-text">エントリー受付中</span></span>
+          <h3>Vague Sky <span>2v2</span><br>【2027】</h3>
+          <dl class="facts">
+            <dt>開催日</dt><dd class="num">2027.1.9（土）9:30</dd>
+            <dt>形式</dt><dd>トーナメント / SkyWars 2v2</dd>
+            <dt>賞金総額</dt><dd style="color:var(--gold)">10万円</dd>
+            <dt>エントリー</dt><dd class="num">11/1 〜 1/1</dd>
+          </dl>
+          <div class="links">
+            <a class="go" href="2027.html">大会ページ</a>
+            <a href="2027.html#entry">エントリー方法</a>
+            <a href="2027.html#rules">ルール</a>
+            <a href="2027.html#results">結果</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="band alt" id="videos">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Videos</p>
+        <h2>動画</h2>
+        <p>PV・告知・説明動画です。タップすると YouTube で開きます。</p>
+      </div>
+      <div class="vcards">
+        <a class="vcard" href="https://youtu.be/sSv1gDjqgYM" target="_blank" rel="noopener"><img src="poster-pv.png" alt="" loading="lazy"><span><b>PV「Vague Sky 2v2」</b><small>YouTube で見る・約87秒</small></span></a>
+        <a class="vcard" href="https://youtu.be/Ti0x-XiK5Aw" target="_blank" rel="noopener"><img src="poster-announce.png" alt="" loading="lazy"><span><b>大会告知</b><small>YouTube で見る・約68秒</small></span></a>
+        <a class="vcard" href="https://youtu.be/XdfKm4iQPk0" target="_blank" rel="noopener"><img src="poster-entry.png" alt="" loading="lazy"><span><b>エントリー方法</b><small>YouTube で見る・約68秒</small></span></a>
+        <a class="vcard" href="https://youtu.be/qBk1UvczVLM" target="_blank" rel="noopener"><img src="poster-rules.png" alt="" loading="lazy"><span><b>大会基本ルール ＋ 延長戦MIST式</b><small>YouTube で見る・約66秒</small></span></a>
+        <a class="vcard" href="https://youtu.be/-uyAdV0niTU" target="_blank" rel="noopener"><img src="poster-kick.png" alt="" loading="lazy"><span><b>Kickに関するルール</b><small>YouTube で見る・約98秒</small></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="archive">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Archive</p>
+        <h2>大会の記録</h2>
+        <p>これまでとこれからの大会です。結果は大会ごとのページで公開します。</p>
+      </div>
+      <div class="archive-wrap">
+        <table class="archive">
+          <thead><tr><th>大会</th><th>開催日</th><th>形式</th><th>状態</th><th>結果</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><a href="2027.html"><b>Vague Sky 2v2【2027】</b></a></td>
+              <td class="num">2027.1.9</td>
+              <td>SkyWars 2v2 トーナメント</td>
+              <td><span class="badge" id="row-status">エントリー受付中</span></td>
+              <td><a href="2027.html#results">開催後に公開</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="about">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <h3>主催：M!ST | TeamSKY</h3>
+        <p>大会への質問は、Discordサーバー「M!ST | TeamSKY」の「@大会スタッフ」までお問い合わせください。</p>
+      </div>
+      <a class="btn primary" href="https://discord.gg/rru5EZYvR3" target="_blank" rel="noopener">Discordに参加する</a>
+      <div hidden>
+      </div>
+    </div>
+    <a class="brand" href="#top"><img src="icon.png" alt="" width="34" height="34"><b>Vague Sky</b></a>
+    <p>Vague Sky — HIVE SkyWars Tournament Series</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var OPEN = Date.parse("2026-11-01T00:00:00+09:00");
+  var CLOSE = Date.parse("2027-01-02T00:00:00+09:00");
+  var START = Date.parse("2027-01-09T09:30:00+09:00");
+  var now = Date.now();
+  var text = now < OPEN ? "エントリー受付前" : now < CLOSE ? "エントリー受付中" : now < START ? "エントリー締め切り" : "開催済み";
+  document.getElementById("status-text").textContent = text;
+  document.getElementById("row-status").textContent = text;
+  if (now >= CLOSE || now < OPEN) document.getElementById("status").className = "pill closed";
+})();
+</script>
+
+</body></html>
