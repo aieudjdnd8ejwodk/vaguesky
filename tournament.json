@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "updatedAt": "2026-11-06T19:28:01+09:00",
+ "updatedAt": "2026-11-06T19:32:46+09:00",
  "tournament": {
   "id": "vaguesky-2v2-2027",
   "name": "Vague Sky 2v2【2027】",
   "startsAt": "2027-01-09T09:30:00+09:00",
-  "status": "upcoming"
+  "status": "live"
  },
  "teams": [
   {
@@ -121,7 +121,7 @@
     "matchId": "SF1",
     "slot": "B"
    },
-   "status": "scheduled",
+   "status": "live",
    "winner": null,
    "score": {
     "a": 0,
