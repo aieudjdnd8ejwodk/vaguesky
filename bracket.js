@@ -8,7 +8,11 @@
   "use strict";
 
   var DATA_URL = "tournament.json"; // GitHub Pages 版：同じ場所の JSON を読む
-  var POLL_MS = 30000;
+  // 速い入り口：GitHub に置かれた最新のファイルを直接読む（Pages の公開作業を待たない）。
+  // 読めないとき（回数制限など）は 10 分だけ DATA_URL に切り替える。
+  var LIVE_URL = "https://api.github.com/repos/aieudjdnd8ejwodk/vaguesky/contents/tournament.json?ref=main";
+  var POLL_MS = 20000;
+  var liveOffUntil = 0;
 
   var root = document.getElementById("bracket-root");
   var empty = document.getElementById("results-empty");
@@ -30,12 +34,27 @@
     return e;
   }
 
+  function fromPages() {
+    return fetch(DATA_URL, { cache: "no-store" }).then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.text();
+    });
+  }
+
   function load() {
     if (DATA_URL) {
-      return fetch(DATA_URL, { cache: "no-store" }).then(function (r) {
-        if (!r.ok) throw new Error("HTTP " + r.status);
-        return r.text();
-      });
+      if (LIVE_URL && Date.now() >= liveOffUntil) {
+        // no-cache: 毎回「変わった？」と確認する。変わっていなければ 304 で、回数にも数えられない
+        return fetch(LIVE_URL, { cache: "no-cache", headers: { Accept: "application/vnd.github.raw+json" } }).then(function (r) {
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          return r.text();
+        }).catch(function (err) {
+          console.warn("GitHub から直接読めませんでした。10分間は公開サイトの JSON を使います", err);
+          liveOffUntil = Date.now() + 10 * 60 * 1000;
+          return fromPages();
+        });
+      }
+      return fromPages();
     }
     var inline = document.getElementById("tournament-data");
     return Promise.resolve(inline ? inline.textContent : "");
@@ -48,7 +67,11 @@
       setNet(true);
       if (text === lastText) return;
       var d = JSON.parse(text);
-      if (!d || !Array.isArray(d.matches) || !d.matches.length) return;
+      if (!d || !Array.isArray(d.matches) || !d.matches.length) {
+        // 表が消された（/bracket_clear）ときは「開催後に公開」に戻す
+        if (lastText !== null) { lastText = text; data = null; root.hidden = true; root.innerHTML = ""; if (empty) empty.hidden = false; }
+        return;
+      }
       if (d.schemaVersion !== 1) console.warn("tournament.json: schemaVersion " + d.schemaVersion + "（このページは 1 向け）");
       lastText = text;
       data = d;
