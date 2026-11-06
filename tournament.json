@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "updatedAt": "2026-11-06T19:35:16+09:00",
+ "updatedAt": "2026-11-06T19:49:16+09:00",
  "tournament": {
   "id": "vaguesky-2v2-2027",
   "name": "Vague Sky 2v2【2027】",
   "startsAt": "2027-01-09T09:30:00+09:00",
-  "status": "live"
+  "status": "upcoming"
  },
  "teams": [
   {
@@ -30,7 +30,7 @@
    "id": "t1566380215431725056",
    "name": "BlowJP",
    "seed": null,
-   "status": "eliminated"
+   "status": "active"
   },
   {
    "id": "t1566386695564435567",
@@ -121,25 +121,13 @@
     "matchId": "SF1",
     "slot": "B"
    },
-   "status": "finished",
-   "winner": "t1566330381823901696",
+   "status": "scheduled",
+   "winner": null,
    "score": {
-    "a": 1,
+    "a": 0,
     "b": 0
    },
-   "games": [
-    {
-     "no": 1,
-     "winner": "a",
-     "overtime": false,
-     "remakes": 0,
-     "note": null,
-     "points": {
-      "a": 5,
-      "b": 1
-     }
-    }
-   ]
+   "games": []
   },
   {
    "id": "C1-1",
@@ -164,7 +152,7 @@
    "roundId": "sf",
    "order": 1,
    "teamA": null,
-   "teamB": "t1566330381823901696",
+   "teamB": null,
    "next": {
     "matchId": "F",
     "slot": "A"
