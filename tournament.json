@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
- "updatedAt": "2026-11-06T19:24:31+09:00",
+ "updatedAt": "2026-11-06T19:28:01+09:00",
  "tournament": {
   "id": "vaguesky-2v2-2027",
   "name": "Vague Sky 2v2【2027】",
   "startsAt": "2027-01-09T09:30:00+09:00",
-  "status": "entry"
+  "status": "upcoming"
  },
  "teams": [
   {
@@ -49,40 +49,156 @@
    "name": "Best butterfly clickers",
    "seed": null,
    "status": "active"
-  },
-  {
-   "id": "t1566614961868767262",
-   "name": "最高の朝食",
-   "seed": null,
-   "status": "active"
-  },
-  {
-   "id": "t1566720774440747052",
-   "name": "iOSブラザーズ（スラム街を添えて）",
-   "seed": null,
-   "status": "active"
-  },
-  {
-   "id": "t1566734495594455040",
-   "name": "妙だな",
-   "seed": null,
-   "status": "active"
-  },
-  {
-   "id": "t1566757356182835250",
-   "name": "ダブル別ゲー浮気ニキ",
-   "seed": null,
-   "status": "active"
-  },
-  {
-   "id": "t1567844523571150858",
-   "name": "ataatamaとnaninu",
-   "seed": null,
-   "status": "active"
   }
  ],
- "rounds": [],
- "matches": [],
+ "rounds": [
+  {
+   "id": "r1",
+   "name": "ブロック決勝",
+   "order": 1,
+   "firstTo": 1
+  },
+  {
+   "id": "sf",
+   "name": "準決勝",
+   "order": 2,
+   "firstTo": 1
+  },
+  {
+   "id": "final",
+   "name": "決勝",
+   "order": 3,
+   "firstTo": 2
+  },
+  {
+   "id": "third",
+   "name": "3位決定戦",
+   "order": 3,
+   "firstTo": 1
+  }
+ ],
+ "matches": [
+  {
+   "id": "F",
+   "roundId": "final",
+   "order": 1,
+   "teamA": null,
+   "teamB": null,
+   "next": null,
+   "status": "scheduled",
+   "winner": null,
+   "score": {
+    "a": 0,
+    "b": 0
+   },
+   "games": []
+  },
+  {
+   "id": "A1-1",
+   "roundId": "r1",
+   "order": 1,
+   "teamA": "t1566289569601818680",
+   "teamB": "t1566311738805198959",
+   "next": {
+    "matchId": "SF1",
+    "slot": "A"
+   },
+   "status": "scheduled",
+   "winner": null,
+   "score": {
+    "a": 0,
+    "b": 0
+   },
+   "games": []
+  },
+  {
+   "id": "B1-1",
+   "roundId": "r1",
+   "order": 2,
+   "teamA": "t1566330381823901696",
+   "teamB": "t1566380215431725056",
+   "next": {
+    "matchId": "SF1",
+    "slot": "B"
+   },
+   "status": "scheduled",
+   "winner": null,
+   "score": {
+    "a": 0,
+    "b": 0
+   },
+   "games": []
+  },
+  {
+   "id": "C1-1",
+   "roundId": "r1",
+   "order": 3,
+   "teamA": "t1566386695564435567",
+   "teamB": "t1566399083898208256",
+   "next": {
+    "matchId": "SF2",
+    "slot": "A"
+   },
+   "status": "scheduled",
+   "winner": null,
+   "score": {
+    "a": 0,
+    "b": 0
+   },
+   "games": []
+  },
+  {
+   "id": "SF1",
+   "roundId": "sf",
+   "order": 1,
+   "teamA": null,
+   "teamB": null,
+   "next": {
+    "matchId": "F",
+    "slot": "A"
+   },
+   "status": "scheduled",
+   "winner": null,
+   "score": {
+    "a": 0,
+    "b": 0
+   },
+   "games": []
+  },
+  {
+   "id": "SF2",
+   "roundId": "sf",
+   "order": 2,
+   "teamA": null,
+   "teamB": "t1566467922489114644",
+   "next": {
+    "matchId": "F",
+    "slot": "B"
+   },
+   "status": "scheduled",
+   "winner": null,
+   "score": {
+    "a": 0,
+    "b": 0
+   },
+   "games": []
+  },
+  {
+   "id": "T3",
+   "roundId": "third",
+   "order": 1,
+   "teamA": null,
+   "teamB": null,
+   "next": null,
+   "status": "scheduled",
+   "winner": null,
+   "score": {
+    "a": 0,
+    "b": 0
+   },
+   "games": []
+  }
+ ],
  "awards": {
   "bestClip": [],
   "prediction": {
