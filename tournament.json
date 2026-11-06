@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "updatedAt": "2026-11-03T19:21:07+09:00",
+ "updatedAt": "2026-11-06T19:17:28+09:00",
  "tournament": {
   "id": "vaguesky-2v2-2027",
   "name": "Vague Sky 2v2【2027】",
@@ -71,6 +71,12 @@
   {
    "id": "t1566757356182835250",
    "name": "ダブル別ゲー浮気ニキ",
+   "seed": null,
+   "status": "active"
+  },
+  {
+   "id": "t1567844523571150858",
+   "name": "ataatamaとnaninu",
    "seed": null,
    "status": "active"
   }
