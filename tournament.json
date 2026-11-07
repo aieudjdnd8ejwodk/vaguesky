@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "updatedAt": "2026-11-06T20:19:29+09:00",
+ "updatedAt": "2026-11-08T01:09:38+09:00",
  "tournament": {
   "id": "vaguesky-2v2-2027",
   "name": "Vague Sky 2v2【2027】",
@@ -77,6 +77,12 @@
   {
    "id": "t1567844523571150858",
    "name": "ataatamaとnaninu",
+   "seed": null,
+   "status": "active"
+  },
+  {
+   "id": "t1568639876709093498",
+   "name": "未定",
    "seed": null,
    "status": "active"
   }
