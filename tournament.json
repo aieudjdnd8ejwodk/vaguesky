@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "updatedAt": "2026-11-08T01:09:38+09:00",
+ "updatedAt": "2026-11-15T01:32:37+09:00",
  "tournament": {
   "id": "vaguesky-2v2-2027",
   "name": "Vague Sky 2v2【2027】",
@@ -83,6 +83,18 @@
   {
    "id": "t1568639876709093498",
    "name": "未定",
+   "seed": null,
+   "status": "active"
+  },
+  {
+   "id": "t1569316450085240846",
+   "name": "Drag Clickers",
+   "seed": null,
+   "status": "active"
+  },
+  {
+   "id": "t1569660595106746418",
+   "name": "長髪男子",
    "seed": null,
    "status": "active"
   }
